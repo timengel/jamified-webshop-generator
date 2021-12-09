@@ -1,0 +1,20 @@
+{
+  "name": "jamified-webshop-generator",
+  "version": "1.0.0",
+  "main": "generator.js",
+  "repository": "git@github.com:timengel/jamified-webshop-generator.git",
+  "author": "Tim Engel <tim.engel@inovex.de>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node generator.js"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "colors": "^1.4.0",
+    "form-data": "^4.0.0",
+    "lorem-ipsum": "^2.0.4",
+    "prompt": "^1.2.0",
+    "strapi-sdk-js": "^2.1.1"
+  }
+}
