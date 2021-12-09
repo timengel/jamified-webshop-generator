@@ -30,11 +30,6 @@ const createProduct = async (product) => {
     headers: {
       'content-type': 'application/json',
     },
-    meta: {
-      pagination: {
-        limit: 1000000,
-      }
-    }
   }
 
   const newEntry = await axios.post(`${apiUrl}/products`, product, config)
