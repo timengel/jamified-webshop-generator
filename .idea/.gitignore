@@ -20,6 +20,29 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Misc.
+*#
+ssl
+.idea
+nbproject
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Node.js
+lib-cov
+lcov.info
+pids
+logs
+results
+node_modules
+.node_history
+
 # Packages
 *.7z
 *.csv
@@ -44,37 +67,3 @@ $RECYCLE.BIN/
 *.swm
 *.out
 *.pid
-
-# Logs and databases
-.tmp
-*.log
-*.sql
-*.sqlite
-*.sqlite3
-
-# Misc.
-*#
-ssl
-.idea
-nbproject
-public/uploads/*
-!public/uploads/.gitkeep
-.env
-license.txt
-exports
-*.cache
-build
-yarn.lock
-
-# Node.js
-lib-cov
-lcov.info
-pids
-logs
-results
-node_modules
-.node_history
-
-# Tests
-testApp
-coverage
