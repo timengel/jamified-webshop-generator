@@ -5,7 +5,11 @@ import axios from 'axios';
 import prompt from 'prompt';
 import colors from 'colors';
 
-const apiUrl = process.env.STRAPI_URL || 'http://localhost:1337';
+const apiUrl = process.env.STRAPI_URL
+    || 'https://jamified-webshop-backend.herokuapp.com';
+// || 'http://localhost:1337';
+
+let numExistingProducts;
 
 const generateAndCreateProducts = async (n) => {
   let nCreated = 0;
@@ -13,8 +17,9 @@ const generateAndCreateProducts = async (n) => {
     return nCreated;
   }
   const existingProducts = await fetchExistingProducts();
+  numExistingProducts = existingProducts.length;
 
-  const promises = generateProducts(n, existingProducts.length).map(
+  const promises = generateProducts(n, numExistingProducts).map(
       async (p) => {
         const created = await createProduct(p);
         if (created) {
@@ -86,7 +91,8 @@ console.log(`######### Starting to create products: ${number}`);
 
 await generateAndCreateProducts(parseInt(number))
 .then(res => console.log(
-    `######### generateAndCreateProducts: Done (${res} created)`))
+    `######### generateAndCreateProducts: Done (${res} created/${res
+    + numExistingProducts} total)`))
 .catch(err => {
   console.log('######### generateAndCreateProducts: Error');
   console.error(err);
