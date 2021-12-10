@@ -79,7 +79,7 @@ const getRandomCategories = () => {
   const indexes = [];
   const categories = getCategories();
   while (indexes.length < numberOfCategories) {
-    let category = generateRandomInteger(1, categories.length);
+    let category = generateRandomInteger(1, categories.length + 1) - 1;
     if (indexes.indexOf(category) === -1) {
       indexes.push(category);
     }
